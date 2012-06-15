@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MessengerService extends Service {
 
@@ -18,6 +19,7 @@ public class MessengerService extends Service {
 			switch (msg.arg1) {
 			case MessengerServiceActivity.MSG_CONNECT_SERVICE:
 				Log.e("MessengerService", "Receive a msg frome Client........");
+				Toast.makeText(MessengerService.this, "Receive a msg from client.", Toast.LENGTH_SHORT).show();
 				break;
 				
 			default:

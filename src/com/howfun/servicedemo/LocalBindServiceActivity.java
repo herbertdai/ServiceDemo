@@ -41,7 +41,7 @@ public class LocalBindServiceActivity extends Activity {
 				if (mIsBound) {
 				    int rand = mLocalService.getRandomInt();
 				    Log.e("", "get random =" + rand);
-				    Toast.makeText(LocalBindServiceActivity.this, "Get Random = " + rand, Toast.LENGTH_SHORT).show();
+				    Toast.makeText(LocalBindServiceActivity.this, "Get Random from service = " + rand, Toast.LENGTH_SHORT).show();
 				    
 				}
 				

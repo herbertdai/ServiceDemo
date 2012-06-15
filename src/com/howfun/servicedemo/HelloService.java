@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 import android.util.Log;
+import android.widget.Toast;
 
 public class HelloService extends Service {
 
@@ -44,12 +45,15 @@ public class HelloService extends Service {
 		Log.e("HelloService", "Run service content, id =" + id);
 		works++;
 		if (works >= ServiceDemoActivity.MAX_WORK) {
-			TimeTest.end();
+			long time = TimeTest.end();
+			Toast.makeText(HelloService.this, "Multi service takes time: " + time + " ms", Toast.LENGTH_LONG).show();
 		}
 	}
 
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.e("HelloService", "service starting , id = " + startId);
+		
+		//? How to stop the thread?
 
 		HandlerThread thread = new HandlerThread("ServiceStartArguments"
 				+ startId, Process.THREAD_PRIORITY_BACKGROUND);
